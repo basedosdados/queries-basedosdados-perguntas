@@ -5,8 +5,6 @@ Esse é um template para um pacote DBT a ser importado no cluster do projeto `ba
 ## Como usar esse template
 
 - Na criação de um novo repositório, selecione o template `queries-template` e crie um repositório com o nome `queries-<nome_do_projeto_gcp>`.
-- Configure o seguinte secret no repositório:
-  - `VAULT_TOKEN`: token de acesso ao vault.
 
 > Este projeto necessita das variáveis de ambiente descritas abaixo. Tais valores são providos na action do arquivo `cd.yaml`, os valores possuem como origem o Vault.
 
@@ -17,8 +15,6 @@ Esse é um template para um pacote DBT a ser importado no cluster do projeto `ba
 
 Aplique as seguintes alterações no projeto:
 
-- Corrija o arquivo `cd.yaml`, onde todos os valores que estão como `<GCP_PROJECT_NAME>` devem ser substituídos pelo nome do projeto GCP;
-- Garanta que todos os valores recuperados do Vault existam e estejam corretos;
 - Modifique o nome do pacote em `dbt_project.yml` para o nome do seu projeto. Aproveite esse momento para ler, com calma, os comentários desse arquivo de configuração.
 - [Crie contas de serviço](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) para seus projetos de desenvolvimento e produção. Caso tenha somente um projeto, pode usar a mesma conta para ambos os propósitos. **Nota:** **Jamais** faça commit de suas credenciais.
 - Acesse o arquivo `profiles.yml` e se atente aos comentários, eles indicam os campos que devem ser alterados.
